@@ -51,7 +51,7 @@ Categories=Development;
 After that press `Ctrl + O` then `Enter` then `Ctrl + X` to save the file.
 
 
-### 3. Run at Startup: Open Startup Applications from the Mint Menu. (One time only)
+### 6. Run at Startup: Open Startup Applications from the Mint Menu. (One time only)
 
 1. Click Add -> Custom Command.
 2. Name: Smart Launcher(Or any name you prefer)
@@ -59,7 +59,7 @@ After that press `Ctrl + O` then `Enter` then `Ctrl + X` to save the file.
 4. Delay: 30 seconds (to allow core OS services to load first).
 
 
-### 4. How to Add Apps in the Smart Launcher
+### 7. How to Add Apps in the Smart Launcher
 **When the GUI opens:**
 
 1. *App Name*: Any name you prefer (e.g., Backend Project, Browser, VSCode).
