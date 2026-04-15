@@ -8,13 +8,30 @@ If you have a slow and old pc, this script is for you. You can schedule apps to 
 
 # Installation & Setup
 
-### 1. Make the Script Executable
-Navigate to the folder where you saved smart_launcher_gui.py, open a terminal and run:
+### 1. Update the system package list
+```
+sudo apt update
+```
+
+### 2. Install Tkinter (The GUI library)
+> This is required for the window and buttons to appear
+```
+sudo apt install python3-tk
+```
+
+### 3. Install Psutil (The system monitoring library)
+> This is required for the script to "feel" the HDD usage
+```
+sudo apt install python3-psutil
+```
+
+### 4. Make the Script Executable
+Navigate to the folder where you saved smart_launcher_gui.py, open a terminal and run (One time only):
 ```
 chmod +x smart_launcher_gui.py
 ```
 
-### 2. Add to Linux Mint Menu (Optional but Recommended)
+### 5. Add to Linux Mint Menu (Optional but Recommended - One time only)
 To find the app in your Start Menu, create a desktop entry:
 
 1. Create the file(Open a terminal & run) : nano ~/.local/share/applications/alvi-launcher.desktop
@@ -34,7 +51,7 @@ Categories=Development;
 After that press `Ctrl + O` then `Enter` then `Ctrl + X` to save the file.
 
 
-### 3. Run at Startup: Open Startup Applications from the Mint Menu.
+### 3. Run at Startup: Open Startup Applications from the Mint Menu. (One time only)
 
 1. Click Add -> Custom Command.
 2. Name: Smart Launcher(Or any name you prefer)
@@ -52,9 +69,13 @@ After that press `Ctrl + O` then `Enter` then `Ctrl + X` to save the file.
     
     > For VS Code Folders: code "/home/username/path with spaces/project" (Use quotes for paths with spaces!)
 
+**After adding the apps in the GUI you can click the "Launch Now" button to launch the apps every time your pc boots**
+
 # ⚠️ Cautions & Notes
 - Path Changes: Remember that if you ever rename or move your project folders, you must update the command in the Launcher GUI, or it will fail to find the directory.
 
 - VS Code Loading: VS Code windows appear before the internal extensions (Python, Docker, etc.) finish loading. The script includes a default 30-second delay between launches to accommodate this.
 
 - Auto Launch: If you want the apps to launch automatically after the **Smart Launcher** starts then look at the line 129 in the code. Then uncomment the line ```root.after(5000, app.run_launch_logic)``` then save the file and restart the *Smart Launcher*. After that the apps that are listed in the **Smart Launcher** will launch automatically after the delayed time eg: 5000 for 5 seconds.
+
+- Do not remove the first line ```#!/usr/bin/env python3`` from the file. This is not a comment and required for the script to run. 
