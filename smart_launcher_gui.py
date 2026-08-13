@@ -125,63 +125,6 @@ class LauncherApp:
             save_apps(self.apps)
             self.refresh_list()
 
-    # def run_launch_logic(self):
-    #     if not self.selected_apps:
-    #         messagebox.showwarning(
-    #             "No Apps Selected",
-    #             "Please select at least one app to launch."
-    #         )
-    #         return
-        
-    #     self.root.destroy()
-    #     print("🚀 Starting smart launch sequence...")
-
-    #     for index, app in self.apps:
-    #         # Skip apps that were not selected
-    #         if index not in self.selected_apps:
-    #             print(f"⏭️ Skipping: {app['name']}")
-    #             continue
-
-    #         print(f"Checking system health for: {app['name']}")
-
-    #         # Wait until the HDD is NOT saturated
-    #         while True:
-    #             cpu = psutil.cpu_percent(interval=1)
-
-    #             disk_before = psutil.disk_io_counters()
-
-    #             time.sleep(2)  # Measure over 2 seconds
-
-    #             disk_after = psutil.disk_io_counters()
-
-    #             # Calculate how much data was read/written in those 2 seconds
-    #             # If it's more than 5MB, the HDD is likely busy
-    #             read_speed = (disk_after.read_bytes -  # type: ignore
-    #                           disk_before.read_bytes) / 1024 / 1024  # type: ignore
-
-    #             if cpu < 60 and read_speed < 5.0:
-    #                 break  # System is quiet enough
-    #             else:
-    #                 print(
-    #                     f"  [WAITING] CPU: {cpu}% | Disk: {read_speed:.1f} MB/s. HDD is busy...")
-
-    #         # Launch
-    #         try:
-    #             # Use shell=True to handle the quoted paths correctly
-    #             cmd_string = " ".join(app['cmd'])
-
-    #             subprocess.Popen(cmd_string, shell=True)
-
-    #             print(f"✅ Triggered {app['name']}")
-
-    #             # IMPORTANT: Sleep for 30s because your HDD is slow.
-    #             # This gives VS Code enough time to actually start
-    #             # before the script checks the disk again.
-    #             time.sleep(30)
-    #         except Exception as e:
-    #             print(f"❌ Error: {e}")
-
-    #     print("🎯 Startup complete!")
 
     def run_launch_logic(self):
 
